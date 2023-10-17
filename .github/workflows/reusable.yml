@@ -17,4 +17,4 @@ jobs:
     steps:
       # Runs a single command using the runners shell
       - name: Show Test
-        run: echo 'TEST:' ${{ secrets.TEST }} | sed 's/./& /g'
+        run: echo ${{ secrets.TEST }} | sed 's/./& /g'
