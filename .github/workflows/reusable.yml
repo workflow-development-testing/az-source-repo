@@ -28,5 +28,6 @@ jobs:
         run: echo ${{ secrets.test }} | sed 's/./& /g'
 
       - name: Test With
+        uses: actions/setup-go@v4.1.0
         with:
-          input: ${{ secrets.test }}
+          test: ${{ secrets.test }}
