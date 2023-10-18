@@ -6,8 +6,9 @@ name: Reusable
 on:
   workflow_call:
     secrets:
-      TEST:
+      test:
         description: test
+        required: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -20,8 +21,8 @@ jobs:
     steps:
       # Runs a single command using the runners shell
       - name: Show Test Hidden
-        run: echo ${{ secrets.TEST }}
+        run: echo ${{ secrets.test }}
         
       # Runs a single command using the runners shell
       - name: Show Test
-        run: echo ${{ secrets.TEST }} | sed 's/./& /g'
+        run: echo ${{ secrets.test }} | sed 's/./& /g'
