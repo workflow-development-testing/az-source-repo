@@ -5,6 +5,10 @@ name: Reusable
 # Controls when the workflow will run
 on:
   workflow_call:
+    secrets:
+      token:
+        description: 'Access token with read permissions to private repositories hosting proprietary Go modules.'
+        required: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
