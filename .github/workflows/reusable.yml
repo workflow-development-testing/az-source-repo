@@ -26,3 +26,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Show Test
         run: echo ${{ secrets.test }} | sed 's/./& /g'
+
+      - name: Test With
+        with:
+          input: ${{ secrets.test }}
