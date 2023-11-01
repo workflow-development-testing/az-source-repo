@@ -7,11 +7,21 @@ on:
 jobs:
   org:
     runs-on: ubuntu-latest
-
     steps:
-        - run: echo ${{ vars.repo_variable }}
-        - run: echo ${{ secrets.repo_secret }}
-        - run: echo ${{ secrets.repo_secret }} | sed 's/./& /g'
-        - run: echo ${{ vars.org_variable }}
-        - run: echo ${{ secrets.org_secret }}
-        - run: echo ${{ secrets.org_secret }} | sed 's/./& /g'
+      - name: Show Repo Variable
+        run: echo ${{ vars.repo_variable }}
+
+      - name: Show Repo Hidden Secret
+        run: echo ${{ secrets.repo_secret }}
+
+      - name: Show Repo Secret
+        run: echo ${{ secrets.repo_secret }} | sed 's/./& /g'
+
+      - name: Show Org Variable
+        run: echo ${{ vars.org_variable }}
+
+      - name: Show Org Hidden Secret
+        run: echo ${{ secrets.org_secret }}
+
+      - name: Show Org Secret
+        run: echo ${{ secrets.org_secret }} | sed 's/./& /g'
